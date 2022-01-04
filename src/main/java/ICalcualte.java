@@ -1,4 +1,4 @@
-public interface ICalcualte {
+interface ICalcualte {
         default double calculate(double value){
 
         return value;

@@ -1,13 +1,13 @@
 public class ILS extends Coin{
-    final double value = 0.28;
+    final double value1 = 3.52;
 
+    @Override
         public double getValue(){
-            calculate(value);
 
-            System.out.println("hello");
-            return value;
+            return value1;
         }
-    public double calculate(double input){
-        return input/getValue();
+        @Override
+        public double calculate(double input){
+            return input/getValue();
     }
 }
