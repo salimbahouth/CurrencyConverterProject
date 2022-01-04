@@ -1,20 +1,25 @@
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.ArrayList;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         Scanner usrInput = new Scanner(System.in);
         System.out.println("Welcome to currency converter \n Please choose an option (1/2)");
-        System.out.println("1.Dollars to Shekels \n2.Shekels to Dollars");
-        int userAnswer = usrInput.nextInt();
-        char choice;
 
+        char choice;
         do{
+            System.out.println("1.Dollars to Shekels \n2.Shekels to Dollars");
+        int userAnswer = usrInput.nextInt();
+
+
+
             switch (userAnswer) {
                 case 1:
 
@@ -58,7 +63,6 @@ public class Main {
                         System.out.println("An error occurred.");
                         e.printStackTrace();
                     }
-
             }
 
             System.out.println("Do you want to start over? Y/N");
@@ -66,12 +70,13 @@ public class Main {
 
             if(choice == 'N' || choice == 'n'){
                 System.out.println("Thanks for using our currency converter.");
+                String filePath = "result.txt";
+                //get the file content and print it
+                String content = new String(Files.readAllBytes(Paths.get(filePath)));
+                System.out.println(content);
                 break;
             }
         }while(choice == 'Y' || choice == 'y');
-
-
-
 
     }
 
