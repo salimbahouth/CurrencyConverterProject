@@ -1,5 +1,5 @@
 public class ILS extends Coin{
-    final double value1 = 3.52;
+    final double value1 = 0.28;
 
     @Override
         public double getValue(){
@@ -8,6 +8,6 @@ public class ILS extends Coin{
         }
         @Override
         public double calculate(double input){
-            return input/getValue();
+            return input*getValue();
     }
 }
